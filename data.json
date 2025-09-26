@@ -1,0 +1,44 @@
+{
+  "Class": [
+    {
+      "name": "Class",
+      "subfolders": [
+        {
+          "name": "Angularjs",
+          "files": [
+            { "name": "CLICK.html", "path": "CLASS/ANGULARJS/CLICK.html" },
+            { "name": "index.html", "path": "CLASS/ANGULARJS/index.html" },
+            { "name": "index2.html", "path": "CLASS/ANGULARJS/index2.html"},
+            { "name": "index3.html", "path": "CLASS/ANGULARJS/index3.html" }    
+          ]
+        },
+        {
+          "name": "jquery",
+          "files": [
+            { "name": "task1", "path": "CLASS/jquery/task1" },
+            { "name": "task2", "path": "CLASS/jquery/task2" },
+            { "name": "task3", "path": "CLASS/jquery/task3" }
+          ]
+        },
+       {
+        "name": "nodejs",
+        "files": [
+            { "name": "public", "path": "CLASS/nodejs/public.index.html"},
+            { "name": "server.js", "path": "CLASS/nodejs/server.js"}
+        ]
+       }
+    ]
+    },
+    {
+      "name": "LAB",
+      "files": [
+        { "name": "exp1", "path": "LAB/exp1" },
+        { "name": "exp2", "path": "LAB/exp2" },
+        { "name": "exp3", "path": "LAB/exp3" },
+        { "name": "exp4", "path": "LAB/exp4" },
+        { "name": "exp6", "path": "LAB/exp6" }
+       
+      ]
+    }
+  ]
+}

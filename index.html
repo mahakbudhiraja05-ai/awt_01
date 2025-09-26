@@ -1,0 +1,140 @@
+<!-- <!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>AWT Progress</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      background: #f9f9f9;
+      color: #222;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 25px;
+      color: #444;
+    }
+    ul {
+      list-style: none;
+      padding-left: 15px;
+    }
+    li {
+      margin: 5px 0;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl">
+
+  <h1>AWT Progress</h1>
+
+  <div ng-repeat="folder in folders">
+    <h2>{{folder.name}}</h2>
+    <ul>
+      <li ng-repeat="file in folder.files" ng-if="file.path.endsWith('.html')">
+        <a ng-href="{{file.path}}">{{file.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    angular.module("app", [])
+      .controller("MainCtrl", function($scope) {
+        $scope.folders = [
+          {
+            name: "AJAX",
+            files: [
+              // (example file placeholders, replace with yours if needed)
+              { name: "ajax example", path: "class/AJAX/index.html" }
+            ]
+          },
+          {
+            name: "Angular",
+            files: [
+              { name: "angular expression", path: "class/Angular/angular_expression.html" },
+              { name: "ng-bind example", path: "class/Angular/ng-bind.html" }
+            ]
+          },
+          {
+            name: "Jquery",
+            files: [
+              { name: "Task 1", path: "class/Jquery/Task 1/task1.html" },
+              { name: "Local Example", path: "class/Jquery/Task 2/local.html" },
+              { name: "Remote Example", path: "class/Jquery/Task 2/remote.html" }
+            ]
+          },
+          {
+            name: "Lab Experiments",
+            files: [
+              { name: "Experiment 1", path: "lab/Experiment_1/index.html" },
+    { name: "Experiment 2", path: "lab/Experiment_2/index.html" },
+    { name: "Experiment 3", path: "lab/Experiment_3/index.html" },
+    { name: "Experiment 4 - Bill", path: "lab/Experiment_4/bill.html" },
+    { name: "Experiment 4 - Form", path: "lab/Experiment_4/form.html" }
+            ]
+          }
+        ];
+      });
+
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>AWT Progress</title>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="s.css">
+  </head>
+  <body ng-controller="MainCtrl">
+    <h1>AWT Progress</h1>
+    <div class="folder" ng-repeat="folder in data.Class">
+      <h2>{{folder.name}}</h2>
+
+      <!-- If the folder has subfolders (Class) -->
+      <div class="subfolder" ng-repeat="sub in folder.subfolders">
+        <h3>{{sub.name}}</h3>
+        <ul>
+          <li ng-repeat="file in sub.files">
+            <a ng-href="{{file.path}}">{{file.name}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- If the folder has direct files (Lab Experiments) -->
+      <ul ng-if="folder.files">
+        <li ng-repeat="file in folder.files">
+          <a ng-href="{{file.path}}">{{file.name}}</a>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+        angular.module('myApp', [])
+            .controller('MainCtrl', function($scope, $http) {
+                $http.get('data.json')
+                    .then(function(response) {
+                        $scope.data = response.data;
+                    })
+                    .catch(function(error) {
+                        console.error("Error fetching data:", error);
+                    });
+            });
+    </script>
+  </body>
+</html>
