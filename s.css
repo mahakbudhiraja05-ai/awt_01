@@ -1,0 +1,81 @@
+/* General page styling */
+body {
+  background: #f9f9f9;
+  color: #222;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding: 30px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+  text-align: center;
+  border-bottom: 3px solid #3498db;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Folder container */
+.folder {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  transition: 0.3s;
+}
+
+.folder:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Folder title */
+.folder h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #34495e;
+  border-left: 5px solid #3498db;
+  padding-left: 10px;
+}
+
+/* Subfolder styling */
+.subfolder {
+  margin: 15px 0;
+  padding: 15px;
+  border-left: 3px solid #95a5a6;
+  background: #fdfdfd;
+  border-radius: 6px;
+}
+
+.subfolder h3 {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+/* File lists */
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* Links */
+a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #1abc9c;
+  text-decoration: underline;
+}
